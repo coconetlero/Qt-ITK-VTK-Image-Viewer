@@ -1,0 +1,15 @@
+Qt-ITK-VTK-Image-Viewer
+
+This software is a very basic Image Processing application. Build for demonstrative purposes, in the use of Qt VTK and ITK libraries together. 
+
+This app, create a GUI with Qt, load an image from file using ITK and display the image using VTK in conjunction with Qt. Also you can apply an image filter with ITK and display the resulting image. 
+
+In order to compile and run this example you need the following libraries:
+
+Cmake 2.8
+InsightToolkit-3.20.0
+VTK-5.6.1
+Qt 4.7
+
+
+
