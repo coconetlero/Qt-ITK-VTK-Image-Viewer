@@ -32,9 +32,9 @@ INCLUDE_DIRECTORIES(
  
  
 # Set your files and resources here
-SET(ImageViewerSrcs imageviewer.cpp main.cpp)
+SET(ImageViewerSrcs imagewidget.cpp imageviewer.cpp main.cpp)
 SET(ImageViewerUI )
-SET(ImageViewerHeaders imageviewer.h)
+SET(ImageViewerHeaders imagewidget.h imageviewer.h)
  
 QT4_WRAP_UI(UISrcs ${ImageViewerUI})
 QT4_WRAP_CPP(MOCSrcs ${ImageViewerHeaders} )

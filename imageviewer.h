@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 
+#include "imagewidget.h"
+
 class QAction;
 class QMenu;
 class QMenuBar;
@@ -34,14 +36,16 @@ private:
 
     void createActions();
     void createMenus();
+    
+    ImageWidget *imageWidget;
 
     QAction *openAct;
-    QAction *exitAct;
-    QAction *medianFilterAct;
+    QAction *exitAct;    
     QAction *aboutAct;
     QAction *aboutQtAct;
 
-
+    QAction *medianFilterAct;
+    
     QMenu *fileMenu;
     QMenu *filterMenu;
     QMenu *helpMenu;
