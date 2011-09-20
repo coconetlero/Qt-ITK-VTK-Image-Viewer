@@ -50,6 +50,11 @@ public:
     void open();
     
     /**
+     * load an display an image from file
+     */
+    void openWithITK();
+    
+    /**
      * Apply a median fiter to the itkImage
      */
     void medianFilter();

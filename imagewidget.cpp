@@ -78,6 +78,44 @@ void ImageWidget::open() {
     }
 }
 
+void ImageWidget::openWithITK() {
+    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
+    if (!fileName.isEmpty()) {
+
+        // read the image
+        typedef itk::ImageFileReader <ImageType> ReaderType;
+        ReaderType::Pointer reader = ReaderType::New();
+        reader->SetFileName(fileName.toLatin1());
+        reader->Update();
+
+        // set the image data provided bye the reader
+        itkImage = reader->GetOutput();
+
+        // setup and connect itk with vtk
+        vtkConnectorType::Pointer connector = vtkConnectorType::New();
+        connector->GetExporter()->SetInput(itkImage);
+        connector->GetImporter()->Update();
+
+        // flip image in Y axis				
+        vtkSmartPointer<vtkImageFlip> flipYFilter = vtkSmartPointer<vtkImageFlip>::New();
+        flipYFilter->SetFilteredAxis(1); // flip Y axis
+        flipYFilter->SetInput(connector->GetImporter()->GetOutput());
+        flipYFilter->Update();
+
+        // create vtk image
+        vtkImage = vtkSmartPointer<vtkImageData>::New();
+        vtkImage->DeepCopy(flipYFilter->GetOutput());
+        vtkImage->SetScalarTypeToUnsignedChar();
+        vtkImage->Update();
+
+        this->displayImage(vtkImage);
+
+        reader = NULL;
+        flipYFilter = NULL;
+        connector = NULL;
+    }
+}
+
 void ImageWidget::medianFilter() {
     // create and show the median filter dialog 
     MedianFilterDialog filterDialog(this);
@@ -120,10 +158,9 @@ void ImageWidget::medianFilter() {
         filter = NULL;
         vtkConnector = NULL;
     }
-
 }
 
-void ImageWidget::displayImage(vtkImageData *image) {
+void ImageWidget::displayImage(vtkImageData * image) {
     actor->SetInput(image);
     actor->InterpolateOff();
 
