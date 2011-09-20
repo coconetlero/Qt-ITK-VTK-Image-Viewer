@@ -9,6 +9,10 @@
 #include <vtkImageReader2.h>
 #include <vtkImageReader2Factory.h>
 
+#include <itkImage.h>
+#include <itkImageFileReader.h>
+
+
 
 #include "imagewidget.h"
 
@@ -44,7 +48,7 @@ void ImageWidget::open() {
     if (!fileName.isEmpty()) {
 
         // Obtain image information
-//        this->setImageProperties(fileName.toStdString(), true);
+        this->setImageProperties(fileName.toStdString(), true);
 
         // reads an vtkImage for display purposes
         vtkSmartPointer <vtkImageReader2Factory> readerFactory =
@@ -75,7 +79,6 @@ void ImageWidget::medianFilter() {
 
 }
 
-
 void ImageWidget::displayImage(vtkImageData *image) {
     actor->SetInput(image);
     actor->InterpolateOff();
@@ -89,3 +92,27 @@ void ImageWidget::displayImage(vtkImageData *image) {
     this->update();
 }
 
+void ImageWidget::setITKImageFromVTK() {
+
+}
+
+void ImageWidget::setImageProperties(std::string fileName, bool vervose) {
+    // Obtain image information
+    typedef itk::ImageIOBase::IOComponentType ScalarPixelType;
+
+    itk::ImageIOBase::Pointer imageIO =
+            itk::ImageIOFactory::CreateImageIO(fileName.c_str(), itk::ImageIOFactory::ReadMode);
+
+    imageIO->SetFileName(fileName);
+    imageIO->ReadImageInformation();
+
+    pixelType = imageIO->GetComponentTypeAsString(imageIO->GetComponentType());
+    numDimensions = imageIO->GetNumberOfDimensions();
+    imageType = imageIO->GetPixelTypeAsString(imageIO->GetPixelType());
+
+    if (vervose) {
+        std::cout << "Pixels type: " << pixelType << std::endl;
+        std::cout << "Image type: " << imageType << std::endl;
+        std::cout << "Num of Dimensions: " << numDimensions << std::endl;
+    }
+}

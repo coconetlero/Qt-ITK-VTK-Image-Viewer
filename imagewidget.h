@@ -18,10 +18,14 @@
 #include <vtkSmartPointer.h>
 #include <vtkImageData.h>
 
+
 #include <itkImage.h>
+
+#include "external/itkVTKImageToImageFilter.h"
 
 
 typedef itk::Image< unsigned char, 2 > ImageType;
+typedef itk::VTKImageToImageFilter <ImageType> itkConnectorType;
 
 class ImageWidget : public QWidget {
     
@@ -62,12 +66,32 @@ private:
     vtkSmartPointer<vtkRenderer> renderer;
     vtkSmartPointer<vtkRenderWindow> renderWindow;
     
+     /** The type of the image components RGB, scalar, etc */
+    std::string pixelType;
+
+    /** The type of the image pixels */
+    std::string imageType;
+
+    /** The number of the image dimensions */
+    size_t numDimensions;
     
     /**
      * to display the loaded image in the QVTKwidget
      * @param image vtkImageData
      */
     void displayImage(vtkImageData *image);
+    
+    /**
+     * Set itkImage converting the vtkImage to a ITK image
+     */
+    void setITKImageFromVTK();
+    
+    /**
+     * extract some image properties as, pixel type, image type and number of dimensions
+     * @param fileName path to the file 
+     * @param vervose if print the standar out 
+     */
+    void setImageProperties(std::string fileName, bool vervose);
 
 };
 
