@@ -8,6 +8,7 @@
 
 #include <vtkImageReader2.h>
 #include <vtkImageReader2Factory.h>
+#include <vtkImageLuminance.h>
 
 #include <itkImage.h>
 #include <itkImageFileReader.h>
@@ -41,6 +42,8 @@ ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent) {
 
 ImageWidget::~ImageWidget() {
     qvtkWidget = NULL;
+    itkImage = NULL;
+    vtkImage = NULL;
 }
 
 void ImageWidget::open() {
@@ -93,7 +96,28 @@ void ImageWidget::displayImage(vtkImageData *image) {
 }
 
 void ImageWidget::setITKImageFromVTK() {
+    itkConnectorType::Pointer itkConnector = itkConnectorType::New();
 
+    if (imageType.compare("rgb") == 0) {
+        // Must convert image to grayscale because itkVTKImageToImageFilter only accepts single channel images
+        vtkSmartPointer<vtkImageLuminance> luminanceFilter =
+                vtkSmartPointer<vtkImageLuminance>::New();
+        luminanceFilter->SetInput(vtkImage);
+        luminanceFilter->Update();
+
+        //get itkImage from vtkImage;  vtkImageData is unsigned char and single channel            
+        itkConnector->SetInput(luminanceFilter->GetOutput());
+        luminanceFilter = NULL;
+    } else {
+        itkConnector->SetInput(vtkImage);
+    }
+
+    itkConnector->Update();
+
+    itkImage = ImageType::New();
+    itkImage->Graft(itkConnector->GetOutput());
+
+    itkConnector = NULL;
 }
 
 void ImageWidget::setImageProperties(std::string fileName, bool vervose) {
