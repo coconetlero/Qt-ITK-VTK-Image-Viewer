@@ -14,9 +14,8 @@
 #include <itkImageFileReader.h>
 #include <itkMedianImageFilter.h>
 
-
-
 #include "imagewidget.h"
+#include "medianFilterDialog.h"
 
 ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent) {
 
@@ -80,40 +79,47 @@ void ImageWidget::open() {
 }
 
 void ImageWidget::medianFilter() {
-    // if the itkImage is not loaded, then vtkImage is converted to itkImage 
-    if (itkImage.IsNull()) {
-        this->setITKImageFromVTK();
+    // create and show the median filter dialog 
+    MedianFilterDialog filterDialog(this);
+    if (filterDialog.exec()) {
+        // get selected value
+        int intensity = filterDialog.spinBox->value();
+
+        // if the itkImage is not loaded, then vtkImage is converted to itkImage 
+        if (itkImage.IsNull()) {
+            this->setITKImageFromVTK();
+        }
+
+        // set up median filter
+        typedef itk::MedianImageFilter<ImageType, ImageType > FilterType;
+
+        FilterType::Pointer filter = FilterType::New();
+        FilterType::InputSizeType radius;
+        radius.Fill(intensity);
+
+        filter->SetRadius(radius);
+        filter->SetInput(itkImage);
+
+        // setup and connect itk with vtk, to transform the itkImage to vtkImage
+        vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
+        vtkConnector->GetExporter()->SetInput(filter->GetOutput());
+        vtkConnector->GetImporter()->Update();
+
+
+        // clear previous vtkImage
+        vtkImage = NULL;
+
+        // create new vtk image
+        vtkImage = vtkSmartPointer <vtkImageData>::New();
+        vtkImage->Initialize();
+        vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+        vtkImage->Update();
+
+        this->displayImage(vtkImage);
+
+        filter = NULL;
+        vtkConnector = NULL;
     }
-
-    // set up median filter
-    typedef itk::MedianImageFilter<ImageType, ImageType > FilterType;
-
-    FilterType::Pointer filter = FilterType::New();
-    FilterType::InputSizeType radius;
-    radius.Fill(5);
-
-    filter->SetRadius(radius);
-    filter->SetInput(itkImage);
-
-    // setup and connect itk with vtk, to transform the itkImage to vtkImage
-    vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
-    vtkConnector->GetExporter()->SetInput(filter->GetOutput());
-    vtkConnector->GetImporter()->Update();
-
-
-    // clear previous vtkImage
-    vtkImage = NULL;
-
-    // create new vtk image
-    vtkImage = vtkSmartPointer <vtkImageData>::New();
-    vtkImage->Initialize();
-    vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
-    vtkImage->Update();
-
-    this->displayImage(vtkImage);
-
-    filter = NULL;
-    vtkConnector = NULL;
 
 }
 
