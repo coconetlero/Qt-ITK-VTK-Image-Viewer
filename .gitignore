@@ -33,5 +33,5 @@ cmake_install.cmake
 
 # Qt generated files #
 #####################
-moc_* 
+moc* 
 
