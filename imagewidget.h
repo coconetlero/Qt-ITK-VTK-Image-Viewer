@@ -22,10 +22,12 @@
 #include <itkImage.h>
 
 #include "external/itkVTKImageToImageFilter.h"
+#include "external/itkImageToVTKImageFilter.h"
 
 
 typedef itk::Image< unsigned char, 2 > ImageType;
 typedef itk::VTKImageToImageFilter <ImageType> itkConnectorType;
+typedef itk::ImageToVTKImageFilter <ImageType> vtkConnectorType;
 
 class ImageWidget : public QWidget {
     
