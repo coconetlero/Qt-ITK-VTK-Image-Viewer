@@ -10,6 +10,8 @@
 #include <vtkImageReader2Factory.h>
 #include <vtkImageLuminance.h>
 
+#include <vtkImageFlip.h>
+
 #include <itkImage.h>
 #include <itkImageFileReader.h>
 #include <itkMedianImageFilter.h>
