@@ -33,5 +33,9 @@ cmake_install.cmake
 
 # Qt generated files #
 #####################
-moc* 
+moc*.*
+
+# Other archives #
+####################
+.gitignore 
 
