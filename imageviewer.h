@@ -26,10 +26,24 @@ protected:
 
 private slots:
 
+    /**
+     * Load and display an image from file
+     */
     void open();
 
+    /**
+     * Apply median filter to image
+     */
     void medianFilter();
-
+    
+    /**
+     * apply an Anisotropic diffusion filter to image
+     */
+    void gradientAnisotropicDiffusionFilter();
+    
+    /**
+     * 
+     */
     void about();
 
 private:
@@ -45,6 +59,7 @@ private:
     QAction *aboutQtAct;
 
     QAction *medianFilterAct;
+    QAction *GADFilterAct;
     
     QMenu *fileMenu;
     QMenu *filterMenu;

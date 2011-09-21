@@ -11,6 +11,7 @@ ImageViewer::ImageViewer(QWidget *parent) : QMainWindow(parent) {
 }
 
 ImageViewer::~ImageViewer() {
+    this->imageWidget = NULL;
 
 }
 
@@ -33,8 +34,12 @@ void ImageViewer::open() {
     }
 }
 
-void ImageViewer::medianFilter() {
-    
+void ImageViewer::medianFilter() {    
+    this->imageWidget->medianFilter();
+}
+
+void ImageViewer::gradientAnisotropicDiffusionFilter() {
+    this->imageWidget->gradientAnisotropicDiffusionFilter();
 }
 
 void ImageViewer::about() {
@@ -67,6 +72,9 @@ void ImageViewer::createActions() {
     medianFilterAct->setStatusTip(tr("Apply a median filter to image"));
     connect(medianFilterAct, SIGNAL(triggered()), this, SLOT(medianFilter()));      
     
+    GADFilterAct = new QAction(tr("Gradient Anisotropic Filter"), this);
+    connect(GADFilterAct, SIGNAL(triggered()), this, SLOT(gradientAnisotropicDiffusionFilter()));
+    
     aboutAct = new QAction(tr("&About"), this);
     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
 
@@ -82,6 +90,7 @@ void ImageViewer::createMenus() {
 
     filterMenu = new QMenu(tr("&Filter"), this);
     filterMenu->addAction(medianFilterAct);
+    filterMenu->addAction(GADFilterAct);
 
     helpMenu = new QMenu(tr("&Help"), this);
     helpMenu->addAction(aboutAct);

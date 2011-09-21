@@ -14,209 +14,262 @@
 
 #include <itkImage.h>
 #include <itkImageFileReader.h>
+#include <itkCastImageFilter.h>
 #include <itkMedianImageFilter.h>
+#include <itkGradientAnisotropicDiffusionImageFilter.h>
 
 #include "imagewidget.h"
 #include "medianFilterDialog.h"
 
-ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent) {
+ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
+{
 
-    this->setAttribute(Qt::WA_DeleteOnClose);
+	this->setAttribute(Qt::WA_DeleteOnClose);
 
-    qvtkWidget = new QVTKWidget(this);
-    //    qvtkWidget->resize(640, 480);
+	qvtkWidget = new QVTKWidget(this);
+	//    qvtkWidget->resize(640, 480);
 
-    QVBoxLayout *layout = new QVBoxLayout;
-    layout->setContentsMargins(0, 0, 0, 0);
-    layout->setSpacing(0);
-    layout->addWidget(qvtkWidget);
-    this->setLayout(layout);
+	QVBoxLayout *layout = new QVBoxLayout;
+	layout->setContentsMargins(0, 0, 0, 0);
+	layout->setSpacing(0);
+	layout->addWidget(qvtkWidget);
+	this->setLayout(layout);
 
 
-    actor = vtkSmartPointer<vtkImageActor>::New();
+	actor = vtkSmartPointer<vtkImageActor>::New();
 
-    // A renderer and render window
-    renderer = vtkSmartPointer<vtkRenderer>::New();
-    renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
-    renderWindow->AddRenderer(renderer);
+	// A renderer and render window
+	renderer = vtkSmartPointer<vtkRenderer>::New();
+	renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
+	renderWindow->AddRenderer(renderer);
 
 }
 
-ImageWidget::~ImageWidget() {
-    qvtkWidget = NULL;
-    itkImage = NULL;
-    vtkImage = NULL;
+ImageWidget::~ImageWidget()
+{
+	qvtkWidget = NULL;
+	itkImage = NULL;
+	vtkImage = NULL;
 }
 
-void ImageWidget::open() {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
-    if (!fileName.isEmpty()) {
+void ImageWidget::open()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
+	if (!fileName.isEmpty()) {
 
-        // Obtain image information
-        this->setImageProperties(fileName.toStdString(), true);
+		// Obtain image information
+		this->setImageProperties(fileName.toStdString(), true);
 
-        // reads an vtkImage for display purposes
-        vtkSmartPointer <vtkImageReader2Factory> readerFactory =
-                vtkSmartPointer <vtkImageReader2Factory>::New();
-        vtkSmartPointer <vtkImageReader2> reader =
-                readerFactory->CreateImageReader2(fileName.toAscii().data());
+		// reads an vtkImage for display purposes
+		vtkSmartPointer <vtkImageReader2Factory> readerFactory =
+			vtkSmartPointer <vtkImageReader2Factory>::New();
+		vtkSmartPointer <vtkImageReader2> reader =
+			readerFactory->CreateImageReader2(fileName.toAscii().data());
 
-        reader->SetFileName(fileName.toAscii().data());
-        reader->Update();
+		reader->SetFileName(fileName.toAscii().data());
+		reader->Update();
 
-        vtkImage = reader->GetOutput();
+		vtkImage = reader->GetOutput();
 
-        this->displayImage(vtkImage);
+		this->displayImage(vtkImage);
 
 
-        readerFactory = NULL;
-        reader = NULL;
+		readerFactory = NULL;
+		reader = NULL;
 
-    } else {
-        QErrorMessage errorMessage;
-        errorMessage.showMessage("No file specified for loading");
-        errorMessage.exec();
-        return;
-    }
+	} else {
+		QErrorMessage errorMessage;
+		errorMessage.showMessage("No file specified for loading");
+		errorMessage.exec();
+		return;
+	}
 }
 
-void ImageWidget::openWithITK() {
-    QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
-    if (!fileName.isEmpty()) {
+void ImageWidget::openWithITK()
+{
+	QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
+	if (!fileName.isEmpty()) {
 
-        // read the image
-        typedef itk::ImageFileReader <ImageType> ReaderType;
-        ReaderType::Pointer reader = ReaderType::New();
-        reader->SetFileName(fileName.toLatin1());
-        reader->Update();
+		// read the image
+		typedef itk::ImageFileReader <ImageType> ReaderType;
+		ReaderType::Pointer reader = ReaderType::New();
+		reader->SetFileName(fileName.toLatin1());
+		reader->Update();
 
-        // set the image data provided bye the reader
-        itkImage = reader->GetOutput();
+		// set the image data provided bye the reader
+		itkImage = reader->GetOutput();
 
-        // setup and connect itk with vtk
-        vtkConnectorType::Pointer connector = vtkConnectorType::New();
-        connector->GetExporter()->SetInput(itkImage);
-        connector->GetImporter()->Update();
+		// setup and connect itk with vtk
+		vtkConnectorType::Pointer connector = vtkConnectorType::New();
+		connector->GetExporter()->SetInput(itkImage);
+		connector->GetImporter()->Update();
 
-        // flip image in Y axis				
-        vtkSmartPointer<vtkImageFlip> flipYFilter = vtkSmartPointer<vtkImageFlip>::New();
-        flipYFilter->SetFilteredAxis(1); // flip Y axis
-        flipYFilter->SetInput(connector->GetImporter()->GetOutput());
-        flipYFilter->Update();
+		// flip image in Y axis				
+		vtkSmartPointer<vtkImageFlip> flipYFilter = vtkSmartPointer<vtkImageFlip>::New();
+		flipYFilter->SetFilteredAxis(1); // flip Y axis
+		flipYFilter->SetInput(connector->GetImporter()->GetOutput());
+		flipYFilter->Update();
 
-        // create vtk image
-        vtkImage = vtkSmartPointer<vtkImageData>::New();
-        vtkImage->DeepCopy(flipYFilter->GetOutput());
-        vtkImage->SetScalarTypeToUnsignedChar();
-        vtkImage->Update();
+		// create vtk image
+		vtkImage = vtkSmartPointer<vtkImageData>::New();
+		vtkImage->DeepCopy(flipYFilter->GetOutput());
+		vtkImage->SetScalarTypeToUnsignedChar();
+		vtkImage->Update();
 
-        this->displayImage(vtkImage);
+		this->displayImage(vtkImage);
 
-        reader = NULL;
-        flipYFilter = NULL;
-        connector = NULL;
-    }
+		reader = NULL;
+		flipYFilter = NULL;
+		connector = NULL;
+	}
 }
 
-void ImageWidget::medianFilter() {
-    // create and show the median filter dialog 
-    MedianFilterDialog filterDialog(this);
-    if (filterDialog.exec()) {
-        // get selected value
-        int intensity = filterDialog.spinBox->value();
+void ImageWidget::medianFilter()
+{
+	// create and show the median filter dialog 
+	MedianFilterDialog filterDialog(this);
+	if (filterDialog.exec()) {
+		// get selected value
+		int intensity = filterDialog.spinBox->value();
 
-        // if the itkImage is not loaded, then vtkImage is converted to itkImage 
-        if (itkImage.IsNull()) {
-            this->setITKImageFromVTK();
-        }
+		// if the itkImage is not loaded, then vtkImage is converted to itkImage 
+		if (itkImage.IsNull()) {
+			this->setITKImageFromVTK();
+		}
 
-        // set up median filter
-        typedef itk::MedianImageFilter<ImageType, ImageType > FilterType;
+		// set up median filter
+		typedef itk::MedianImageFilter<ImageType, ImageType > FilterType;
 
-        FilterType::Pointer filter = FilterType::New();
-        FilterType::InputSizeType radius;
-        radius.Fill(intensity);
+		FilterType::Pointer filter = FilterType::New();
+		FilterType::InputSizeType radius;
+		radius.Fill(intensity);
 
-        filter->SetRadius(radius);
-        filter->SetInput(itkImage);
+		filter->SetRadius(radius);
+		filter->SetInput(itkImage);
 
-        // setup and connect itk with vtk, to transform the itkImage to vtkImage
-        vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
-        vtkConnector->GetExporter()->SetInput(filter->GetOutput());
-        vtkConnector->GetImporter()->Update();
+		// setup and connect itk with vtk, to transform the itkImage to vtkImage
+		vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
+		vtkConnector->GetExporter()->SetInput(filter->GetOutput());
+		vtkConnector->GetImporter()->Update();
 
 
-        // clear previous vtkImage
-        vtkImage = NULL;
+		// clear previous vtkImage
+		vtkImage = NULL;
 
-        // create new vtk image
-        vtkImage = vtkSmartPointer <vtkImageData>::New();
-        vtkImage->Initialize();
-        vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
-        vtkImage->Update();
+		// create new vtk image
+		vtkImage = vtkSmartPointer <vtkImageData>::New();
+		vtkImage->Initialize();
+		vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+		vtkImage->Update();
 
-        this->displayImage(vtkImage);
+		this->displayImage(vtkImage);
 
-        filter = NULL;
-        vtkConnector = NULL;
-    }
+		filter = NULL;
+		vtkConnector = NULL;
+	}
 }
 
-void ImageWidget::displayImage(vtkImageData * image) {
-    actor->SetInput(image);
-    actor->InterpolateOff();
+void ImageWidget::gradientAnisotropicDiffusionFilter()
+{
 
-    renderer->AddActor(actor);
-    renderer->ResetCamera();
-    renderWindow->SetSize(640, 480);
+	// if the itkImage is not loaded, then vtkImage is converted to itkImage 
+	if (itkImage.IsNull()) {
+		this->setITKImageFromVTK();
+	}
 
-    qvtkWidget->SetRenderWindow(renderWindow);
+	// set up gradient anisotropic diffusion filter
+	typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
+	FilterType::Pointer filter = FilterType::New();
+	filter->SetInput(itkImage);
 
-    this->update();
+	filter->SetNumberOfIterations(25);
+	filter->SetTimeStep(0.125f);
+	filter->SetConductanceParameter(0.8f);
+	filter->Update();
+
+	// cast the float image to scalar image in orther to display
+	typedef itk::CastImageFilter< FloatImageType, ImageType > CastFilterType;
+	CastFilterType::Pointer castFilter = CastFilterType::New();
+	castFilter->SetInput(filter->GetOutput());
+
+	// setup and connect itk with vtk, to transform the itkImage to vtkImage
+	vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
+	vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
+	vtkConnector->GetImporter()->Update();
+
+	// clear previous vtkImage
+	vtkImage = NULL;
+
+	// create new vtk image
+	vtkImage = vtkSmartPointer <vtkImageData>::New();
+	vtkImage->Initialize();
+	vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+	vtkImage->Update();
+
+	this->displayImage(vtkImage);
+
+	filter = NULL;
+	vtkConnector = NULL;
 }
 
-void ImageWidget::setITKImageFromVTK() {
-    itkConnectorType::Pointer itkConnector = itkConnectorType::New();
+void ImageWidget::displayImage(vtkImageData * image)
+{
+	actor->SetInput(image);
+	actor->InterpolateOff();
 
-    if (imageType.compare("rgb") == 0) {
-        // Must convert image to grayscale because itkVTKImageToImageFilter only accepts single channel images
-        vtkSmartPointer<vtkImageLuminance> luminanceFilter =
-                vtkSmartPointer<vtkImageLuminance>::New();
-        luminanceFilter->SetInput(vtkImage);
-        luminanceFilter->Update();
+	renderer->AddActor(actor);
+	renderer->ResetCamera();
+	renderWindow->SetSize(640, 480);
 
-        //get itkImage from vtkImage;  vtkImageData is unsigned char and single channel            
-        itkConnector->SetInput(luminanceFilter->GetOutput());
-        luminanceFilter = NULL;
-    } else {
-        itkConnector->SetInput(vtkImage);
-    }
+	qvtkWidget->SetRenderWindow(renderWindow);
 
-    itkConnector->Update();
-
-    itkImage = ImageType::New();
-    itkImage->Graft(itkConnector->GetOutput());
-
-    itkConnector = NULL;
+	this->update();
 }
 
-void ImageWidget::setImageProperties(std::string fileName, bool vervose) {
-    // Obtain image information
-    typedef itk::ImageIOBase::IOComponentType ScalarPixelType;
+void ImageWidget::setITKImageFromVTK()
+{
+	itkConnectorType::Pointer itkConnector = itkConnectorType::New();
 
-    itk::ImageIOBase::Pointer imageIO =
-            itk::ImageIOFactory::CreateImageIO(fileName.c_str(), itk::ImageIOFactory::ReadMode);
+	if (imageType.compare("rgb") == 0) {
+		// Must convert image to grayscale because itkVTKImageToImageFilter only accepts single channel images
+		vtkSmartPointer<vtkImageLuminance> luminanceFilter =
+			vtkSmartPointer<vtkImageLuminance>::New();
+		luminanceFilter->SetInput(vtkImage);
+		luminanceFilter->Update();
 
-    imageIO->SetFileName(fileName);
-    imageIO->ReadImageInformation();
+		//get itkImage from vtkImage;  vtkImageData is unsigned char and single channel            
+		itkConnector->SetInput(luminanceFilter->GetOutput());
+		luminanceFilter = NULL;
+	} else {
+		itkConnector->SetInput(vtkImage);
+	}
 
-    pixelType = imageIO->GetComponentTypeAsString(imageIO->GetComponentType());
-    numDimensions = imageIO->GetNumberOfDimensions();
-    imageType = imageIO->GetPixelTypeAsString(imageIO->GetPixelType());
+	itkConnector->Update();
 
-    if (vervose) {
-        std::cout << "Pixels type: " << pixelType << std::endl;
-        std::cout << "Image type: " << imageType << std::endl;
-        std::cout << "Num of Dimensions: " << numDimensions << std::endl;
-    }
+	itkImage = ImageType::New();
+	itkImage->Graft(itkConnector->GetOutput());
+
+	itkConnector = NULL;
+}
+
+void ImageWidget::setImageProperties(std::string fileName, bool vervose)
+{
+	// Obtain image information
+	typedef itk::ImageIOBase::IOComponentType ScalarPixelType;
+
+	itk::ImageIOBase::Pointer imageIO =
+		itk::ImageIOFactory::CreateImageIO(fileName.c_str(), itk::ImageIOFactory::ReadMode);
+
+	imageIO->SetFileName(fileName);
+	imageIO->ReadImageInformation();
+
+	pixelType = imageIO->GetComponentTypeAsString(imageIO->GetComponentType());
+	numDimensions = imageIO->GetNumberOfDimensions();
+	imageType = imageIO->GetPixelTypeAsString(imageIO->GetPixelType());
+
+	if (vervose) {
+		std::cout << "Pixels type: " << pixelType << std::endl;
+		std::cout << "Image type: " << imageType << std::endl;
+		std::cout << "Num of Dimensions: " << numDimensions << std::endl;
+	}
 }
