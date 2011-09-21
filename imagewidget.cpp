@@ -18,6 +18,8 @@
 #include <itkMedianImageFilter.h>
 #include <itkGradientAnisotropicDiffusionImageFilter.h>
 
+#include <vtkInteractorStyleImage.h>
+
 #include "imagewidget.h"
 #include "medianFilterDialog.h"
 
@@ -36,17 +38,18 @@ ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 	this->setLayout(layout);
 
 
+	// Create image actor
 	actor = vtkSmartPointer<vtkImageActor>::New();
 
 	// A renderer and render window
 	renderer = vtkSmartPointer<vtkRenderer>::New();
 	renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->AddRenderer(renderer);
-
 }
 
 ImageWidget::~ImageWidget()
 {
+	renderWindow->Finalize();
 	qvtkWidget = NULL;
 	itkImage = NULL;
 	vtkImage = NULL;
@@ -219,10 +222,18 @@ void ImageWidget::displayImage(vtkImageData * image)
 
 	renderer->AddActor(actor);
 	renderer->ResetCamera();
-	renderWindow->SetSize(640, 480);
+//	renderWindow->SetSize(640, 480);
+		
+	// window interactor style for display images 
+	vtkSmartPointer<vtkInteractorStyleImage> style = 
+		vtkSmartPointer<vtkInteractorStyleImage>::New();
 
-	qvtkWidget->SetRenderWindow(renderWindow);
-
+	// set interactor style to the qvtkWidget Interactor
+	qvtkWidget->GetInteractor()->SetInteractorStyle(style);
+	
+	
+	qvtkWidget->SetRenderWindow(renderWindow);	
+	
 	this->update();
 }
 
