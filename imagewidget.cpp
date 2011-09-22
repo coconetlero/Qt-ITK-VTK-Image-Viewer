@@ -22,6 +22,7 @@
 
 #include "imagewidget.h"
 #include "medianFilterDialog.h"
+#include "GADFilterDialog.h"
 
 ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 {
@@ -45,6 +46,7 @@ ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 	renderer = vtkSmartPointer<vtkRenderer>::New();
 	renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
 	renderWindow->AddRenderer(renderer);
+
 }
 
 ImageWidget::~ImageWidget()
@@ -169,11 +171,13 @@ void ImageWidget::medianFilter()
 
 		filter = NULL;
 		vtkConnector = NULL;
+
 	}
 }
 
 void ImageWidget::gradientAnisotropicDiffusionFilter()
 {
+
 
 	// if the itkImage is not loaded, then vtkImage is converted to itkImage 
 	if (itkImage.IsNull()) {
@@ -185,9 +189,9 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 	FilterType::Pointer filter = FilterType::New();
 	filter->SetInput(itkImage);
 
-	filter->SetNumberOfIterations(25);
-	filter->SetTimeStep(0.125f);
-	filter->SetConductanceParameter(0.8f);
+	filter->SetNumberOfIterations(5);
+	filter->SetTimeStep(0.125);
+	filter->SetConductanceParameter(0.8);
 	filter->Update();
 
 	// cast the float image to scalar image in orther to display
@@ -213,6 +217,8 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 
 	filter = NULL;
 	vtkConnector = NULL;
+
+
 }
 
 void ImageWidget::displayImage(vtkImageData * image)
@@ -222,18 +228,17 @@ void ImageWidget::displayImage(vtkImageData * image)
 
 	renderer->AddActor(actor);
 	renderer->ResetCamera();
-//	renderWindow->SetSize(640, 480);
-		
+	//	renderWindow->SetSize(640, 480);
+
 	// window interactor style for display images 
-	vtkSmartPointer<vtkInteractorStyleImage> style = 
+	vtkSmartPointer<vtkInteractorStyleImage> style =
 		vtkSmartPointer<vtkInteractorStyleImage>::New();
+
+	qvtkWidget->SetRenderWindow(renderWindow);
 
 	// set interactor style to the qvtkWidget Interactor
 	qvtkWidget->GetInteractor()->SetInteractorStyle(style);
-	
-	
-	qvtkWidget->SetRenderWindow(renderWindow);	
-	
+
 	this->update();
 }
 
