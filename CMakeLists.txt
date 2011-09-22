@@ -32,9 +32,11 @@ INCLUDE_DIRECTORIES(
  
  
 # Set your files and resources here
-SET(ImageViewerSrcs imageviewer.cpp imagewidget.cpp main.cpp MedianFilterDialog.cpp)
-SET(ImageViewerUI MedianFilterDialog.ui)
-SET(ImageViewerHeaders imageviewer.h imagewidget.h MedianFilterDialog.h)
+SET(ImageViewerSrcs imageviewer.cpp imagewidget.cpp main.cpp MedianFilterDialog.cpp
+    GADFilterDialog.cpp)
+SET(ImageViewerUI MedianFilterDialog.ui GADFilterDialog.ui)
+SET(ImageViewerHeaders imageviewer.h imagewidget.h MedianFilterDialog.h 
+    GADFilterDialog.h)
  
 QT4_WRAP_UI(UISrcs ${ImageViewerUI})
 QT4_WRAP_CPP(MOCSrcs ${ImageViewerHeaders} )
