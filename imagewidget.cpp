@@ -177,48 +177,49 @@ void ImageWidget::medianFilter()
 
 void ImageWidget::gradientAnisotropicDiffusionFilter()
 {
+	// create and show the median filter dialog 	
+	GADFilterDialog filterDialog(this);
+	if (filterDialog.exec()) {
 
+		// if the itkImage is not loaded, then vtkImage is converted to itkImage 
+		if (itkImage.IsNull()) {
+			this->setITKImageFromVTK();
+		}
 
-	// if the itkImage is not loaded, then vtkImage is converted to itkImage 
-	if (itkImage.IsNull()) {
-		this->setITKImageFromVTK();
+		// set up gradient anisotropic diffusion filter
+		typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
+		FilterType::Pointer filter = FilterType::New();
+		filter->SetInput(itkImage);
+
+		filter->SetNumberOfIterations(filterDialog.iterationsSpinBox->value());
+		filter->SetTimeStep(filterDialog.timeStepSpinBox->value());
+		filter->SetConductanceParameter(filterDialog.conductanceSpinBox->value());
+		filter->Update();
+
+		// cast the float image to scalar image in orther to display
+		typedef itk::CastImageFilter< FloatImageType, ImageType > CastFilterType;
+		CastFilterType::Pointer castFilter = CastFilterType::New();
+		castFilter->SetInput(filter->GetOutput());
+
+		// setup and connect itk with vtk, to transform the itkImage to vtkImage
+		vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
+		vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
+		vtkConnector->GetImporter()->Update();
+
+		// clear previous vtkImage
+		vtkImage = NULL;
+
+		// create new vtk image
+		vtkImage = vtkSmartPointer <vtkImageData>::New();
+		vtkImage->Initialize();
+		vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+		vtkImage->Update();
+
+		this->displayImage(vtkImage);
+
+		filter = NULL;
+		vtkConnector = NULL;
 	}
-
-	// set up gradient anisotropic diffusion filter
-	typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
-	FilterType::Pointer filter = FilterType::New();
-	filter->SetInput(itkImage);
-
-	filter->SetNumberOfIterations(5);
-	filter->SetTimeStep(0.125);
-	filter->SetConductanceParameter(0.8);
-	filter->Update();
-
-	// cast the float image to scalar image in orther to display
-	typedef itk::CastImageFilter< FloatImageType, ImageType > CastFilterType;
-	CastFilterType::Pointer castFilter = CastFilterType::New();
-	castFilter->SetInput(filter->GetOutput());
-
-	// setup and connect itk with vtk, to transform the itkImage to vtkImage
-	vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
-	vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
-	vtkConnector->GetImporter()->Update();
-
-	// clear previous vtkImage
-	vtkImage = NULL;
-
-	// create new vtk image
-	vtkImage = vtkSmartPointer <vtkImageData>::New();
-	vtkImage->Initialize();
-	vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
-	vtkImage->Update();
-
-	this->displayImage(vtkImage);
-
-	filter = NULL;
-	vtkConnector = NULL;
-
-
 }
 
 void ImageWidget::displayImage(vtkImageData * image)
@@ -233,7 +234,6 @@ void ImageWidget::displayImage(vtkImageData * image)
 	// window interactor style for display images 
 	vtkSmartPointer<vtkInteractorStyleImage> style =
 		vtkSmartPointer<vtkInteractorStyleImage>::New();
-
 	qvtkWidget->SetRenderWindow(renderWindow);
 
 	// set interactor style to the qvtkWidget Interactor
