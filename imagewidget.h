@@ -20,17 +20,21 @@
 
 
 #include <itkImage.h>
+#include <itkRGBPixel.h>
 
 #include "external/itkVTKImageToImageFilter.h"
 #include "external/itkImageToVTKImageFilter.h"
 
 
 typedef itk::RGBPixel< unsigned char > RGBPixelType;
+
 typedef itk::Image< unsigned char, 2 > ImageType;
 typedef itk::Image< float, 2 > FloatImageType;
 typedef itk::Image< RGBPixelType, 2 > RGBImageType;
+
 typedef itk::VTKImageToImageFilter <ImageType> itkConnectorType;
 typedef itk::ImageToVTKImageFilter <ImageType> vtkConnectorType;
+typedef itk::ImageToVTKImageFilter <RGBImageType> RGBVtkConnectorType;
 typedef itk::ImageToVTKImageFilter <FloatImageType> vtkFloatConnectorType;
 
 
@@ -77,7 +81,9 @@ private:
 
     /** The image displayed for this window */
     ImageType::Pointer itkImage;
-
+    RGBImageType::Pointer rgbItkImage;
+    
+    
     /** The VTK image to display in this window */
     vtkSmartPointer <vtkImageData> vtkImage;
 
@@ -94,6 +100,9 @@ private:
 
     /** The number of the image dimensions */
     size_t numDimensions;
+    
+    /** flag for a flipped image */
+    bool isFliped;
 
     /**
      * to display the loaded image in the QVTKwidget
