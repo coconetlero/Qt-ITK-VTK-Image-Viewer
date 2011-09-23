@@ -65,6 +65,30 @@ void ImageWidget::open()
 		// Obtain image information
 		this->setImageProperties(fileName.toStdString(), true);
 
+		// set itk image depending on the image type 
+		// if image type is grayscale
+		if (imageType.compare("scalar") == 0) {
+			// read the image
+			typedef itk::ImageFileReader <ImageType> ReaderType;
+			ReaderType::Pointer reader = ReaderType::New();
+			reader->SetFileName(fileName.toLatin1());
+			reader->Update();
+
+			// set the image data provided bye the reader
+			itkImage = reader->GetOutput();
+
+		} else {
+		// if is RGB
+			// read the image
+			typedef itk::ImageFileReader <RGBImageType> ReaderType;
+			ReaderType::Pointer reader = ReaderType::New();
+			reader->SetFileName(fileName.toLatin1());
+			reader->Update();
+
+			// set the image data provided bye the reader
+			RGBItkImage = reader->GetOutput();
+		}
+
 		// reads an vtkImage for display purposes
 		vtkSmartPointer <vtkImageReader2Factory> readerFactory =
 			vtkSmartPointer <vtkImageReader2Factory>::New();
