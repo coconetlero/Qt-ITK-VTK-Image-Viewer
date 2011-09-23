@@ -17,6 +17,7 @@
 #include <itkCastImageFilter.h>
 #include <itkMedianImageFilter.h>
 #include <itkGradientAnisotropicDiffusionImageFilter.h>
+#include <itkVectorGradientAnisotropicDiffusionImageFilter.h>
 
 #include <vtkInteractorStyleImage.h>
 
@@ -78,7 +79,7 @@ void ImageWidget::open()
 			itkImage = reader->GetOutput();
 
 		} else {
-		// if is RGB
+			// if is RGB
 			// read the image
 			typedef itk::ImageFileReader <RGBImageType> ReaderType;
 			ReaderType::Pointer reader = ReaderType::New();
@@ -86,7 +87,7 @@ void ImageWidget::open()
 			reader->Update();
 
 			// set the image data provided bye the reader
-			RGBItkImage = reader->GetOutput();
+			rgbItkImage = reader->GetOutput();
 		}
 
 		// reads an vtkImage for display purposes
@@ -100,6 +101,7 @@ void ImageWidget::open()
 
 		vtkImage = reader->GetOutput();
 
+		this->isFliped = true;
 		this->displayImage(vtkImage);
 
 
@@ -181,7 +183,7 @@ void ImageWidget::medianFilter()
 		vtkConnector->GetExporter()->SetInput(filter->GetOutput());
 		vtkConnector->GetImporter()->Update();
 
-
+		itkImage = filter->GetOutput();
 		// clear previous vtkImage
 		vtkImage = NULL;
 
@@ -191,6 +193,7 @@ void ImageWidget::medianFilter()
 		vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
 		vtkImage->Update();
 
+		isFliped = false;
 		this->displayImage(vtkImage);
 
 		filter = NULL;
@@ -205,50 +208,102 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 	GADFilterDialog filterDialog(this);
 	if (filterDialog.exec()) {
 
-		// if the itkImage is not loaded, then vtkImage is converted to itkImage 
-		if (itkImage.IsNull()) {
-			this->setITKImageFromVTK();
+		// if the image is grayscale
+		if (imageType.compare("scalar") == 0) {
+			// set up gradient anisotropic diffusion filter
+			typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
+			FilterType::Pointer filter = FilterType::New();
+			filter->SetInput(itkImage);
+
+			filter->SetNumberOfIterations(filterDialog.iterationsSpinBox->value());
+			filter->SetTimeStep(filterDialog.timeStepSpinBox->value());
+			filter->SetConductanceParameter(filterDialog.conductanceSpinBox->value());
+			filter->Update();			
+			
+			// cast the float image to scalar image in order to display
+			typedef itk::CastImageFilter< FloatImageType, ImageType > CastFilterType;
+			CastFilterType::Pointer castFilter = CastFilterType::New();
+			castFilter->SetInput(filter->GetOutput());
+			
+			itkImage = castFilter->GetOutput();
+
+			// setup and connect itk with vtk, to transform the itkImage to vtkImage
+			vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
+			vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
+			vtkConnector->GetImporter()->Update();
+
+			// clear previous vtkImage
+			vtkImage = NULL;
+
+			// create new vtk image
+			vtkImage = vtkSmartPointer <vtkImageData>::New();
+			vtkImage->Initialize();
+			vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+			vtkImage->Update();
+
+			isFliped = false;
+			this->displayImage(vtkImage);
+
+			filter = NULL;
+			vtkConnector = NULL;
+		} else {
+			// if image is RGB
+			typedef itk::RGBPixel< float > FloatPixelType;
+			typedef itk::Image< FloatPixelType, 2 > FloatRGBImageType;
+			typedef itk::VectorGradientAnisotropicDiffusionImageFilter< RGBImageType, FloatRGBImageType > FilterType;
+
+
+			FilterType::Pointer filter = FilterType::New();
+			filter->SetInput(rgbItkImage);
+
+			filter->SetNumberOfIterations(filterDialog.iterationsSpinBox->value());
+			filter->SetTimeStep(filterDialog.timeStepSpinBox->value());
+			filter->SetConductanceParameter(filterDialog.conductanceSpinBox->value());
+			filter->Update();
+
+			typedef itk::CastImageFilter< FloatRGBImageType, RGBImageType > CastFilterType;
+			CastFilterType::Pointer castFilter = CastFilterType::New();
+			castFilter->SetInput(filter->GetOutput());
+
+			rgbItkImage = castFilter->GetOutput();
+
+			// setup and connect itk with vtk, to transform the itkImage to vtkImage
+			RGBVtkConnectorType::Pointer vtkConnector = RGBVtkConnectorType::New();
+			vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
+			vtkConnector->GetImporter()->Update();
+
+			// clear previous vtkImage
+			vtkImage = NULL;
+
+			// create new vtk image
+			vtkImage = vtkSmartPointer <vtkImageData>::New();
+			vtkImage->Initialize();
+			vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
+			vtkImage->Update();
+
+			isFliped = false;
+			this->displayImage(vtkImage);
+
+			filter = NULL;
+			vtkConnector = NULL;
 		}
-
-		// set up gradient anisotropic diffusion filter
-		typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
-		FilterType::Pointer filter = FilterType::New();
-		filter->SetInput(itkImage);
-
-		filter->SetNumberOfIterations(filterDialog.iterationsSpinBox->value());
-		filter->SetTimeStep(filterDialog.timeStepSpinBox->value());
-		filter->SetConductanceParameter(filterDialog.conductanceSpinBox->value());
-		filter->Update();
-
-		// cast the float image to scalar image in orther to display
-		typedef itk::CastImageFilter< FloatImageType, ImageType > CastFilterType;
-		CastFilterType::Pointer castFilter = CastFilterType::New();
-		castFilter->SetInput(filter->GetOutput());
-
-		// setup and connect itk with vtk, to transform the itkImage to vtkImage
-		vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
-		vtkConnector->GetExporter()->SetInput(castFilter->GetOutput());
-		vtkConnector->GetImporter()->Update();
-
-		// clear previous vtkImage
-		vtkImage = NULL;
-
-		// create new vtk image
-		vtkImage = vtkSmartPointer <vtkImageData>::New();
-		vtkImage->Initialize();
-		vtkImage->DeepCopy(vtkConnector->GetImporter()->GetOutput());
-		vtkImage->Update();
-
-		this->displayImage(vtkImage);
-
-		filter = NULL;
-		vtkConnector = NULL;
 	}
 }
 
-void ImageWidget::displayImage(vtkImageData * image)
+void ImageWidget::displayImage(vtkImageData *image)
 {
-	actor->SetInput(image);
+	if (!isFliped) {
+		// flip image in Y axis				
+		vtkSmartPointer<vtkImageFlip> flipYFilter = vtkSmartPointer<vtkImageFlip>::New();
+		flipYFilter->SetFilteredAxis(1); // flip Y axis
+		flipYFilter->SetInput(image);
+		flipYFilter->Update();
+
+		actor->SetInput(flipYFilter->GetOutput());
+	} else {
+		actor->SetInput(image);
+	}
+
 	actor->InterpolateOff();
 
 	renderer->AddActor(actor);
