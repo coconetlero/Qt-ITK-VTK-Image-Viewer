@@ -25,11 +25,16 @@
 #include "external/itkImageToVTKImageFilter.h"
 
 
+typedef itk::RGBPixel< unsigned char > RGBPixelType;
 typedef itk::Image< unsigned char, 2 > ImageType;
 typedef itk::Image< float, 2 > FloatImageType;
+typedef itk::Image< RGBPixelType, 2 > RGBImageType;
 typedef itk::VTKImageToImageFilter <ImageType> itkConnectorType;
 typedef itk::ImageToVTKImageFilter <ImageType> vtkConnectorType;
 typedef itk::ImageToVTKImageFilter <FloatImageType> vtkFloatConnectorType;
+
+
+  
 
 class ImageWidget : public QWidget {
     Q_OBJECT
@@ -79,6 +84,7 @@ private:
     vtkSmartPointer<vtkImageActor> actor;
     vtkSmartPointer<vtkRenderer> renderer;
     vtkSmartPointer<vtkRenderWindow> renderWindow;
+    vtkSmartPointer<vtkRenderWindowInteractor> interactor; 
 
     /** The type of the image components RGB, scalar, etc */
     std::string pixelType;
