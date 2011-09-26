@@ -32,38 +32,47 @@ private slots:
     void open();
 
     /**
+     * Save as, to the disk, displayed image 
+     */
+    void saveAs();
+
+    /**
      * Apply median filter to image
      */
     void medianFilter();
-    
+
     /**
      * apply an Anisotropic diffusion filter to image
      */
     void gradientAnisotropicDiffusionFilter();
-    
+
     /**
      * 
      */
     void about();
 
 private:
-
+    
     void createActions();
     void createMenus();
-    
+    void createStatusBar();
+
     ImageWidget *imageWidget;
 
     QAction *openAct;
-    QAction *exitAct;    
+    QAction *saveAsAct;
+    QAction *exitAct;
     QAction *aboutAct;
     QAction *aboutQtAct;
 
     QAction *medianFilterAct;
     QAction *GADFilterAct;
-    
+
     QMenu *fileMenu;
     QMenu *filterMenu;
     QMenu *helpMenu;
+    
+    QLabel *statusLabel;
 };
 
 #endif
