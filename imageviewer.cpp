@@ -125,7 +125,7 @@ void ImageViewer::createStatusBar()
 {
 	statusLabel = new QLabel("Basic Image Viewer");
 	statusLabel->setAlignment(Qt::AlignHCenter);
-	statusLabel->setMinimumSize(statusxLabel->sizeHint());
+    statusLabel->setMaximumSize(statusLabel->sizeHint());
 
 	statusBar()->addWidget(statusLabel);
 }

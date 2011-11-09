@@ -198,7 +198,6 @@ void ImageWidget::medianFilter()
 
 		filter = NULL;
 		vtkConnector = NULL;
-
 	}
 }
 
