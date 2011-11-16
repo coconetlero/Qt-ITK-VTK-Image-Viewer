@@ -8,8 +8,6 @@
 #ifndef MEDIANFILTERDIALOG_H
 #define	MEDIANFILTERDIALOG_H
 
-#include <QDialog>
-
 #include "ui_MedianFilterDialog.h"
 
 class MedianFilterDialog : public QDialog, public Ui::MedianFilterDialog {

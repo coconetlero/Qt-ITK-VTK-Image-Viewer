@@ -9,8 +9,6 @@ ImageViewer::ImageViewer(QWidget *parent) : QMainWindow(parent)
 	createActions();
 	createMenus();
 	createStatusBar();
-
-
 }
 
 ImageViewer::~ImageViewer()
@@ -21,17 +19,21 @@ ImageViewer::~ImageViewer()
 
 void ImageViewer::open()
 {
+    
 	if (!imageWidget) {
 		this->imageWidget = new ImageWidget();
+//        this->imageWidget->openWithITK();
 		this->imageWidget->open();
-		this->setCentralWidget(imageWidget);
+		
+        this->setCentralWidget(imageWidget);
 		this->setWindowTitle(tr("Image Viewer"));
 		this->resize(640, 480);
 	} else {
 		ImageViewer *viewer = new ImageViewer();
 		viewer->imageWidget = new ImageWidget();
+//        viewer->imageWidget->openWithITK();        
 		viewer->imageWidget->open();
-
+        
 		viewer->setCentralWidget(viewer->imageWidget);
 		viewer->setWindowTitle(tr("Image Viewer"));
 		viewer->resize(640, 480);

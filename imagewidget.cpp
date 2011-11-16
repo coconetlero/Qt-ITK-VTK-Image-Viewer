@@ -61,10 +61,11 @@ ImageWidget::~ImageWidget()
 void ImageWidget::open()
 {
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
+    
 	if (!fileName.isEmpty()) {
 
 		// Obtain image information
-		this->setImageProperties(fileName.toStdString(), true);
+		this->setImageProperties(fileName.toAscii().data(), true);
 
 		// set itk image depending on the image type 
 		// if image type is grayscale
@@ -72,25 +73,24 @@ void ImageWidget::open()
 			// read the image
 			typedef itk::ImageFileReader <ImageType> ReaderType;
 			ReaderType::Pointer reader = ReaderType::New();
-			reader->SetFileName(fileName.toLatin1());
+			reader->SetFileName(fileName.toAscii().data());
 			reader->Update();
 
 			// set the image data provided bye the reader
 			itkImage = reader->GetOutput();
 
 		} else {
-			// if is RGB
-			// read the image
+			// if the image is RGB
 			typedef itk::ImageFileReader <RGBImageType> ReaderType;
 			ReaderType::Pointer reader = ReaderType::New();
-			reader->SetFileName(fileName.toLatin1());
+			reader->SetFileName(fileName.toAscii().data());
 			reader->Update();
 
 			// set the image data provided bye the reader
 			rgbItkImage = reader->GetOutput();
 		}
 
-		// reads an vtkImage for display purposes
+		// reads a vtkImage for display purposes
 		vtkSmartPointer <vtkImageReader2Factory> readerFactory =
 			vtkSmartPointer <vtkImageReader2Factory>::New();
 		vtkSmartPointer <vtkImageReader2> reader =
@@ -119,12 +119,13 @@ void ImageWidget::open()
 void ImageWidget::openWithITK()
 {
 	QString fileName = QFileDialog::getOpenFileName(this, tr("Open File"), QDir::currentPath());
+    
 	if (!fileName.isEmpty()) {
 
 		// read the image
 		typedef itk::ImageFileReader <ImageType> ReaderType;
 		ReaderType::Pointer reader = ReaderType::New();
-		reader->SetFileName(fileName.toLatin1());
+		reader->SetFileName(fileName.toAscii().data());
 		reader->Update();
 
 		// set the image data provided bye the reader
@@ -159,8 +160,10 @@ void ImageWidget::medianFilter()
 {
 	// create and show the median filter dialog 
 	MedianFilterDialog filterDialog(this);
+    
+    // if the user don't cancel the action
 	if (filterDialog.exec()) {
-		// get selected value
+		// get selected value from dialog
 		int intensity = filterDialog.spinBox->value();
 
 		// if the itkImage is not loaded, then vtkImage is converted to itkImage 
@@ -168,8 +171,8 @@ void ImageWidget::medianFilter()
 			this->setITKImageFromVTK();
 		}
 
-		// set up median filter
-		typedef itk::MedianImageFilter<ImageType, ImageType > FilterType;
+		// setup the itk median filter
+		typedef itk::MedianImageFilter<ImageType, ImageType> FilterType;
 
 		FilterType::Pointer filter = FilterType::New();
 		FilterType::InputSizeType radius;
@@ -177,7 +180,9 @@ void ImageWidget::medianFilter()
 
 		filter->SetRadius(radius);
 		filter->SetInput(itkImage);
-
+        filter->Update();
+        
+        
 		// setup and connect itk with vtk, to transform the itkImage to vtkImage
 		vtkConnectorType::Pointer vtkConnector = vtkConnectorType::New();
 		vtkConnector->GetExporter()->SetInput(filter->GetOutput());
