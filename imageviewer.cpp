@@ -8,7 +8,7 @@ ImageViewer::ImageViewer(QWidget *parent) : QMainWindow(parent)
 
 	createActions();
 	createMenus();
-	createStatusBar();
+	createStatusBar();    
 }
 
 ImageViewer::~ImageViewer()

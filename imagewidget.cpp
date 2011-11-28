@@ -315,8 +315,7 @@ void ImageWidget::displayImage(vtkImageData *image)
 	//	renderWindow->SetSize(640, 480);
 
 	// window interactor style for display images 
-	vtkSmartPointer<vtkInteractorStyleImage> style =
-		vtkSmartPointer<vtkInteractorStyleImage>::New();
+	vtkSmartPointer<vtkInteractorStyleImage> style = vtkSmartPointer<vtkInteractorStyleImage>::New();
 	qvtkWidget->SetRenderWindow(renderWindow);
 
 	// set interactor style to the qvtkWidget Interactor

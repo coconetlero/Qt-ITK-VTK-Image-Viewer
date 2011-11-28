@@ -34,22 +34,26 @@ INCLUDE_DIRECTORIES(
 # Set your files and resources here
 SET(ImageViewerSrcs imageviewer.cpp imagewidget.cpp main.cpp MedianFilterDialog.cpp
     GADFilterDialog.cpp)
+    
+SET(ImageViewerHeaders imageviewer.h imagewidget.h MedianFilterDialog.h GADFilterDialog.h)
+    
 SET(ImageViewerUI MedianFilterDialog.ui GADFilterDialog.ui)
-SET(ImageViewerHeaders imageviewer.h imagewidget.h MedianFilterDialog.h 
-    GADFilterDialog.h)
  
+ 
+# for generate qt aditional files 
 QT4_WRAP_UI(UISrcs ${ImageViewerUI})
 QT4_WRAP_CPP(MOCSrcs ${ImageViewerHeaders} )
  
+ 
+# Packaging source code in same files 
 SOURCE_GROUP("Resources" FILES
   ${ImageViewerUI}
 )
  
 SOURCE_GROUP("Generated" FILES
-  ${UISrcs}
-  ${MOCSrcs}
+  ${UISrcs} ${MOCSrcs}
 )
  
-ADD_EXECUTABLE(ImageViewer ${ImageViewerSrcs} ${UISrcs} ${MOCSrcs})
+ADD_EXECUTABLE(ImageViewer ${ImageViewerSrcs} ${ImageViewerHeaders} ${UISrcs} ${MOCSrcs})
 TARGET_LINK_LIBRARIES(ImageViewer QVTK ${VTK_LIBRARIES} ${ITK_LIBRARIES})
 
