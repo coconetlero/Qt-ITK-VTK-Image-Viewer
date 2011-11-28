@@ -16,7 +16,7 @@
 
 # OS generated files #
 ######################
-.DS_Store
+.DS_Store?
 Thumbs.db
 
 # netbeans generated directories #
@@ -32,14 +32,10 @@ Makefile
 cmake_install.cmake
 
 # Qt generated files #
-######################
+#####################
 moc*.*
 
-#    Build folders   #
-######################
-build*/
-
-#   Other archives   #
-######################
+# Other archives #
+####################
 .gitignore 
 

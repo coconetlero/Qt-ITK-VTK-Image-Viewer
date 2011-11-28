@@ -4,40 +4,10 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>ALL_BUILD 2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
-		</dict>
-		<key>ALL_BUILD 4.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>5</integer>
-		</dict>
-		<key>ALL_BUILD 6.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>6</integer>
-		</dict>
 		<key>ALL_BUILD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>1</integer>
-		</dict>
-		<key>ImageViewer 2.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>3</integer>
-		</dict>
-		<key>ImageViewer 4.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>4</integer>
-		</dict>
-		<key>ImageViewer 6.xcscheme</key>
-		<dict>
-			<key>orderHint</key>
-			<integer>7</integer>
 		</dict>
 		<key>ImageViewer.xcscheme</key>
 		<dict>
@@ -47,42 +17,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>105524010552401055240000</key>
+		<key>104A070104A070104A070000</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>105C2F0105C2F0105C2F0000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>105D260105D260105D260000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>106260010626001062600000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>10BB3D010BB3D010BB3D0000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D67805D67805D6780000000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D74805D74805D7480000000</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>5D9B305D9B305D9B30000000</key>
+		<key>5C15A05C15A05C15A0000000</key>
 		<dict>
 			<key>primary</key>
 			<true/>

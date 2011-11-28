@@ -13,7 +13,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "106260010626001062600000"
+               BlueprintIdentifier = "104A070104A070104A070000"
                BuildableName = "ImageViewer"
                BlueprintName = "ImageViewer"
                ReferencedContainer = "container:build-xcode-3.20/ImageViewer.xcodeproj">
@@ -31,7 +31,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "106260010626001062600000"
+            BlueprintIdentifier = "104A070104A070104A070000"
             BuildableName = "ImageViewer"
             BlueprintName = "ImageViewer"
             ReferencedContainer = "container:build-xcode-3.20/ImageViewer.xcodeproj">
@@ -43,13 +43,13 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
       launchStyle = "0"
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Release"
+      buildConfiguration = "Debug"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "106260010626001062600000"
+            BlueprintIdentifier = "104A070104A070104A070000"
             BuildableName = "ImageViewer"
             BlueprintName = "ImageViewer"
             ReferencedContainer = "container:build-xcode-3.20/ImageViewer.xcodeproj">
@@ -67,7 +67,7 @@
       <BuildableProductRunnable>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "106260010626001062600000"
+            BlueprintIdentifier = "104A070104A070104A070000"
             BuildableName = "ImageViewer"
             BlueprintName = "ImageViewer"
             ReferencedContainer = "container:build-xcode-3.20/ImageViewer.xcodeproj">

@@ -1,6 +1,6 @@
 /* 
  * File:   medianFilterDialog.cpp
- * Author: zian
+ * Author: zian fanti
  * 
  * Created on 14 de septiembre de 2011, 16:52
  */

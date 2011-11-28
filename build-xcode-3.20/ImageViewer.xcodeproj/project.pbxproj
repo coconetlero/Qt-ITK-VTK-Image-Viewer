@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		5D9B305D9B305D9B30000000 /* ALL_BUILD */ = {
+		5C15A05C15A05C15A0000000 /* ALL_BUILD */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 5DAC005DAC005DAC00000000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
+			buildConfigurationList = 5C26705C26705C2670000000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */;
 			buildPhases = (
-				5D9DD05D9DD05D9DD0000000 /* CMake ReRun */,
-				5DA4405DA4405DA440000000 /* CMake Rules */,
+				5C18405C18405C1840000000 /* CMake ReRun */,
+				5C1EB05C1EB05C1EB0000000 /* CMake Rules */,
 			);
 			dependencies = (
-				10803B010803B010803B0000 /* PBXTargetDependency */,
+				1067E201067E201067E20000 /* PBXTargetDependency */,
 			);
 			name = ALL_BUILD;
 			productName = ALL_BUILD;
@@ -23,168 +23,168 @@
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		105B2C0105B2C0105B2C0000 /* moc_imagewidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 105B090105B090105B090000 /* moc_imagewidget.cxx */; settings = {COMPILER_FLAGS = ""; }; };
-		105BE40105BE40105BE40000 /* moc_MedianFilterDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 105BC30105BC30105BC30000 /* moc_MedianFilterDialog.cxx */; settings = {COMPILER_FLAGS = ""; }; };
-		105CA30105CA30105CA30000 /* moc_GADFilterDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 105C7F0105C7F0105C7F0000 /* moc_GADFilterDialog.cxx */; settings = {COMPILER_FLAGS = ""; }; };
-		5BFA005BFA005BFA00000000 /* moc_imageviewer.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 5BF8805BF8805BF880000000 /* moc_imageviewer.cxx */; settings = {COMPILER_FLAGS = ""; }; };
-		5C04D05C04D05C04D0000000 /* GADFilterDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C3CF05C3CF05C3CF0000000 /* GADFilterDialog.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		5C2E105C2E105C2E10000000 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C43F05C43F05C43F0000000 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		5C39E05C39E05C39E0000000 /* MedianFilterDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5C31A05C31A05C31A0000000 /* MedianFilterDialog.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		5CE0405CE0405CE040000000 /* imageviewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CD9405CD9405CD940000000 /* imageviewer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
-		5CEB505CEB505CEB50000000 /* imagewidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5CE3E05CE3E05CE3E0000000 /* imagewidget.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		1042D301042D301042D30000 /* moc_imagewidget.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 1042B001042B001042B00000 /* moc_imagewidget.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		10438B010438B010438B0000 /* moc_MedianFilterDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 10436A010436A010436A0000 /* moc_MedianFilterDialog.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		10444A010444A010444A0000 /* moc_GADFilterDialog.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 104426010442601044260000 /* moc_GADFilterDialog.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		5A74705A74705A7470000000 /* moc_imageviewer.cxx in Sources */ = {isa = PBXBuildFile; fileRef = 5A72F05A72F05A72F0000000 /* moc_imageviewer.cxx */; settings = {COMPILER_FLAGS = ""; }; };
+		5A7F405A7F405A7F40000000 /* GADFilterDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5AB7605AB7605AB760000000 /* GADFilterDialog.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5AA8805AA8805AA880000000 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5ABE605ABE605ABE60000000 /* main.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5AB4505AB4505AB450000000 /* MedianFilterDialog.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5AAC105AAC105AAC10000000 /* MedianFilterDialog.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5B5AB05B5AB05B5AB0000000 /* imageviewer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B53B05B53B05B53B0000000 /* imageviewer.cpp */; settings = {COMPILER_FLAGS = ""; }; };
+		5B65C05B65C05B65C0000000 /* imagewidget.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 5B5E505B5E505B5E50000000 /* imagewidget.cpp */; settings = {COMPILER_FLAGS = ""; }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		107FEF0107FEF0107FEF0000 /* PBXContainerItemProxy */ = {
+		106796010679601067960000 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 5D75305D75305D7530000000 /* Project object */;
+			containerPortal = 5BEFA05BEFA05BEFA0000000 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 106260010626001062600000;
+			remoteGlobalIDString = 104A070104A070104A070000;
 			remoteInfo = ImageViewer;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		105B090105B090105B090000 /* moc_imagewidget.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_imagewidget.cxx; path = "build-xcode-3.20/moc_imagewidget.cxx"; sourceTree = SOURCE_ROOT; };
-		105BC30105BC30105BC30000 /* moc_MedianFilterDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_MedianFilterDialog.cxx; path = "build-xcode-3.20/moc_MedianFilterDialog.cxx"; sourceTree = SOURCE_ROOT; };
-		105C7F0105C7F0105C7F0000 /* moc_GADFilterDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_GADFilterDialog.cxx; path = "build-xcode-3.20/moc_GADFilterDialog.cxx"; sourceTree = SOURCE_ROOT; };
-		105DBF0105DBF0105DBF0000 /* MedianFilterDialog.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; path = MedianFilterDialog.ui; sourceTree = SOURCE_ROOT; };
-		105E7A0105E7A0105E7A0000 /* GADFilterDialog.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; path = GADFilterDialog.ui; sourceTree = SOURCE_ROOT; };
-		105F2E0105F2E0105F2E0000 /* moc_imageviewer.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_imageviewer.cxx.rule; path = "build-xcode-3.20/moc_imageviewer.cxx.rule"; sourceTree = SOURCE_ROOT; };
-		105FED0105FED0105FED0000 /* moc_imagewidget.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_imagewidget.cxx.rule; path = "build-xcode-3.20/moc_imagewidget.cxx.rule"; sourceTree = SOURCE_ROOT; };
-		1060A001060A001060A00000 /* moc_MedianFilterDialog.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_MedianFilterDialog.cxx.rule; path = "build-xcode-3.20/moc_MedianFilterDialog.cxx.rule"; sourceTree = SOURCE_ROOT; };
-		106163010616301061630000 /* moc_GADFilterDialog.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_GADFilterDialog.cxx.rule; path = "build-xcode-3.20/moc_GADFilterDialog.cxx.rule"; sourceTree = SOURCE_ROOT; };
-		107F790107F790107F790000 /* ImageViewer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ImageViewer; sourceTree = BUILT_PRODUCTS_DIR; };
-		5BD5E05BD5E05BD5E0000000 /* GADFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADFilterDialog.h; sourceTree = SOURCE_ROOT; };
-		5BE1305BE1305BE130000000 /* ui_MedianFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_MedianFilterDialog.h; path = "build-xcode-3.20/ui_MedianFilterDialog.h"; sourceTree = SOURCE_ROOT; };
-		5BECC05BECC05BECC0000000 /* ui_GADFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_GADFilterDialog.h; path = "build-xcode-3.20/ui_GADFilterDialog.h"; sourceTree = SOURCE_ROOT; };
-		5BF8805BF8805BF880000000 /* moc_imageviewer.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_imageviewer.cxx; path = "build-xcode-3.20/moc_imageviewer.cxx"; sourceTree = SOURCE_ROOT; };
-		5C08805C08805C0880000000 /* imageviewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageviewer.h; sourceTree = SOURCE_ROOT; };
-		5C13B05C13B05C13B0000000 /* imagewidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imagewidget.h; sourceTree = SOURCE_ROOT; };
-		5C1EA05C1EA05C1EA0000000 /* MedianFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedianFilterDialog.h; sourceTree = SOURCE_ROOT; };
-		5C31A05C31A05C31A0000000 /* MedianFilterDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MedianFilterDialog.cpp; sourceTree = SOURCE_ROOT; };
-		5C3CF05C3CF05C3CF0000000 /* GADFilterDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GADFilterDialog.cpp; sourceTree = SOURCE_ROOT; };
-		5C43F05C43F05C43F0000000 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
-		5CD1F05CD1F05CD1F0000000 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
-		5CD9405CD9405CD940000000 /* imageviewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imageviewer.cpp; sourceTree = SOURCE_ROOT; };
-		5CE3E05CE3E05CE3E0000000 /* imagewidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imagewidget.cpp; sourceTree = SOURCE_ROOT; };
+		1042B001042B001042B00000 /* moc_imagewidget.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_imagewidget.cxx; path = "build-xcode-3.20/moc_imagewidget.cxx"; sourceTree = SOURCE_ROOT; };
+		10436A010436A010436A0000 /* moc_MedianFilterDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_MedianFilterDialog.cxx; path = "build-xcode-3.20/moc_MedianFilterDialog.cxx"; sourceTree = SOURCE_ROOT; };
+		104426010442601044260000 /* moc_GADFilterDialog.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_GADFilterDialog.cxx; path = "build-xcode-3.20/moc_GADFilterDialog.cxx"; sourceTree = SOURCE_ROOT; };
+		104566010456601045660000 /* MedianFilterDialog.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; path = MedianFilterDialog.ui; sourceTree = SOURCE_ROOT; };
+		104621010462101046210000 /* GADFilterDialog.ui */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; path = GADFilterDialog.ui; sourceTree = SOURCE_ROOT; };
+		1046D501046D501046D50000 /* moc_imageviewer.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_imageviewer.cxx.rule; path = "build-xcode-3.20/moc_imageviewer.cxx.rule"; sourceTree = SOURCE_ROOT; };
+		104794010479401047940000 /* moc_imagewidget.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_imagewidget.cxx.rule; path = "build-xcode-3.20/moc_imagewidget.cxx.rule"; sourceTree = SOURCE_ROOT; };
+		104847010484701048470000 /* moc_MedianFilterDialog.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_MedianFilterDialog.cxx.rule; path = "build-xcode-3.20/moc_MedianFilterDialog.cxx.rule"; sourceTree = SOURCE_ROOT; };
+		10490A010490A010490A0000 /* moc_GADFilterDialog.cxx.rule */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode; name = moc_GADFilterDialog.cxx.rule; path = "build-xcode-3.20/moc_GADFilterDialog.cxx.rule"; sourceTree = SOURCE_ROOT; };
+		106720010672001067200000 /* ImageViewer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; path = ImageViewer; sourceTree = BUILT_PRODUCTS_DIR; };
+		5A50505A50505A5050000000 /* GADFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADFilterDialog.h; sourceTree = SOURCE_ROOT; };
+		5A5BA05A5BA05A5BA0000000 /* ui_MedianFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_MedianFilterDialog.h; path = "build-xcode-3.20/ui_MedianFilterDialog.h"; sourceTree = SOURCE_ROOT; };
+		5A67305A67305A6730000000 /* ui_GADFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ui_GADFilterDialog.h; path = "build-xcode-3.20/ui_GADFilterDialog.h"; sourceTree = SOURCE_ROOT; };
+		5A72F05A72F05A72F0000000 /* moc_imageviewer.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = moc_imageviewer.cxx; path = "build-xcode-3.20/moc_imageviewer.cxx"; sourceTree = SOURCE_ROOT; };
+		5A82F05A82F05A82F0000000 /* imageviewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imageviewer.h; sourceTree = SOURCE_ROOT; };
+		5A8E205A8E205A8E20000000 /* imagewidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = imagewidget.h; sourceTree = SOURCE_ROOT; };
+		5A99105A99105A9910000000 /* MedianFilterDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MedianFilterDialog.h; sourceTree = SOURCE_ROOT; };
+		5AAC105AAC105AAC10000000 /* MedianFilterDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MedianFilterDialog.cpp; sourceTree = SOURCE_ROOT; };
+		5AB7605AB7605AB760000000 /* GADFilterDialog.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = GADFilterDialog.cpp; sourceTree = SOURCE_ROOT; };
+		5ABE605ABE605ABE60000000 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = SOURCE_ROOT; };
+		5B4C605B4C605B4C60000000 /* CMakeLists.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.text; path = CMakeLists.txt; sourceTree = SOURCE_ROOT; };
+		5B53B05B53B05B53B0000000 /* imageviewer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imageviewer.cpp; sourceTree = SOURCE_ROOT; };
+		5B5E505B5E505B5E50000000 /* imagewidget.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = imagewidget.cpp; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXGroup section */
-		5D33D05D33D05D33D0000000 = {
+		5BAE405BAE405BAE40000000 = {
 			isa = PBXGroup;
 			children = (
-				5D36C05D36C05D36C0000000 /* Sources */,
-				5D3AC05D3AC05D3AC0000000 /* Resources */,
-				5D3EC05D3EC05D3EC0000000 /* Products */,
+				5BB1305BB1305BB130000000 /* Sources */,
+				5BB5305BB5305BB530000000 /* Resources */,
+				5BB9305BB9305BB930000000 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		5D36C05D36C05D36C0000000 /* Sources */ = {
+		5BB1305BB1305BB130000000 /* Sources */ = {
 			isa = PBXGroup;
 			children = (
-				5D42005D42005D4200000000 /* ALL_BUILD */,
-				5D4D905D4D905D4D90000000 /* ImageViewer */,
+				5BBC705BBC705BBC70000000 /* ALL_BUILD */,
+				5BC8005BC8005BC800000000 /* ImageViewer */,
 			);
 			name = Sources;
 			sourceTree = "<group>";
 		};
-		5D3AC05D3AC05D3AC0000000 /* Resources */ = {
+		5BB5305BB5305BB530000000 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		5D3EC05D3EC05D3EC0000000 /* Products */ = {
+		5BB9305BB9305BB930000000 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				107F790107F790107F790000 /* ImageViewer */,
+				106720010672001067200000 /* ImageViewer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		5D42005D42005D4200000000 /* ALL_BUILD */ = {
+		5BBC705BBC705BBC70000000 /* ALL_BUILD */ = {
 			isa = PBXGroup;
 			children = (
-				5D48105D48105D4810000000 /* CMake Rules */,
-				5CD1F05CD1F05CD1F0000000 /* CMakeLists.txt */,
+				5BC2805BC2805BC280000000 /* CMake Rules */,
+				5B4C605B4C605B4C60000000 /* CMakeLists.txt */,
 			);
 			name = ALL_BUILD;
 			sourceTree = "<group>";
 		};
-		5D48105D48105D4810000000 /* CMake Rules */ = {
+		5BC2805BC2805BC280000000 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
 		};
-		5D4D905D4D905D4D90000000 /* ImageViewer */ = {
+		5BC8005BC8005BC800000000 /* ImageViewer */ = {
 			isa = PBXGroup;
 			children = (
-				5D51C05D51C05D51C0000000 /* Source Files */,
-				5D58E05D58E05D58E0000000 /* Header Files */,
-				5D5F905D5F905D5F90000000 /* Generated */,
-				5D68D05D68D05D68D0000000 /* Resources */,
-				5D6E605D6E605D6E60000000 /* CMake Rules */,
-				5CD1F05CD1F05CD1F0000000 /* CMakeLists.txt */,
+				5BCC305BCC305BCC30000000 /* Source Files */,
+				5BD3505BD3505BD350000000 /* Header Files */,
+				5BDA005BDA005BDA00000000 /* Generated */,
+				5BE3405BE3405BE340000000 /* Resources */,
+				5BE8D05BE8D05BE8D0000000 /* CMake Rules */,
+				5B4C605B4C605B4C60000000 /* CMakeLists.txt */,
 			);
 			name = ImageViewer;
 			sourceTree = "<group>";
 		};
-		5D51C05D51C05D51C0000000 /* Source Files */ = {
+		5BCC305BCC305BCC30000000 /* Source Files */ = {
 			isa = PBXGroup;
 			children = (
-				5CD9405CD9405CD940000000 /* imageviewer.cpp */,
-				5CE3E05CE3E05CE3E0000000 /* imagewidget.cpp */,
-				5C43F05C43F05C43F0000000 /* main.cpp */,
-				5C31A05C31A05C31A0000000 /* MedianFilterDialog.cpp */,
-				5C3CF05C3CF05C3CF0000000 /* GADFilterDialog.cpp */,
+				5B53B05B53B05B53B0000000 /* imageviewer.cpp */,
+				5B5E505B5E505B5E50000000 /* imagewidget.cpp */,
+				5ABE605ABE605ABE60000000 /* main.cpp */,
+				5AAC105AAC105AAC10000000 /* MedianFilterDialog.cpp */,
+				5AB7605AB7605AB760000000 /* GADFilterDialog.cpp */,
 			);
 			name = "Source Files";
 			sourceTree = "<group>";
 		};
-		5D58E05D58E05D58E0000000 /* Header Files */ = {
+		5BD3505BD3505BD350000000 /* Header Files */ = {
 			isa = PBXGroup;
 			children = (
-				5C08805C08805C0880000000 /* imageviewer.h */,
-				5C13B05C13B05C13B0000000 /* imagewidget.h */,
-				5C1EA05C1EA05C1EA0000000 /* MedianFilterDialog.h */,
-				5BD5E05BD5E05BD5E0000000 /* GADFilterDialog.h */,
+				5A82F05A82F05A82F0000000 /* imageviewer.h */,
+				5A8E205A8E205A8E20000000 /* imagewidget.h */,
+				5A99105A99105A9910000000 /* MedianFilterDialog.h */,
+				5A50505A50505A5050000000 /* GADFilterDialog.h */,
 			);
 			name = "Header Files";
 			sourceTree = "<group>";
 		};
-		5D5F905D5F905D5F90000000 /* Generated */ = {
+		5BDA005BDA005BDA00000000 /* Generated */ = {
 			isa = PBXGroup;
 			children = (
-				5BE1305BE1305BE130000000 /* ui_MedianFilterDialog.h */,
-				5BECC05BECC05BECC0000000 /* ui_GADFilterDialog.h */,
-				5BF8805BF8805BF880000000 /* moc_imageviewer.cxx */,
-				105B090105B090105B090000 /* moc_imagewidget.cxx */,
-				105BC30105BC30105BC30000 /* moc_MedianFilterDialog.cxx */,
-				105C7F0105C7F0105C7F0000 /* moc_GADFilterDialog.cxx */,
+				5A5BA05A5BA05A5BA0000000 /* ui_MedianFilterDialog.h */,
+				5A67305A67305A6730000000 /* ui_GADFilterDialog.h */,
+				5A72F05A72F05A72F0000000 /* moc_imageviewer.cxx */,
+				1042B001042B001042B00000 /* moc_imagewidget.cxx */,
+				10436A010436A010436A0000 /* moc_MedianFilterDialog.cxx */,
+				104426010442601044260000 /* moc_GADFilterDialog.cxx */,
 			);
 			name = Generated;
 			sourceTree = "<group>";
 		};
-		5D68D05D68D05D68D0000000 /* Resources */ = {
+		5BE3405BE3405BE340000000 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				105DBF0105DBF0105DBF0000 /* MedianFilterDialog.ui */,
-				105E7A0105E7A0105E7A0000 /* GADFilterDialog.ui */,
+				104566010456601045660000 /* MedianFilterDialog.ui */,
+				104621010462101046210000 /* GADFilterDialog.ui */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		5D6E605D6E605D6E60000000 /* CMake Rules */ = {
+		5BE8D05BE8D05BE8D0000000 /* CMake Rules */ = {
 			isa = PBXGroup;
 			children = (
-				105F2E0105F2E0105F2E0000 /* moc_imageviewer.cxx.rule */,
-				105FED0105FED0105FED0000 /* moc_imagewidget.cxx.rule */,
-				1060A001060A001060A00000 /* moc_MedianFilterDialog.cxx.rule */,
-				106163010616301061630000 /* moc_GADFilterDialog.cxx.rule */,
+				1046D501046D501046D50000 /* moc_imageviewer.cxx.rule */,
+				104794010479401047940000 /* moc_imagewidget.cxx.rule */,
+				104847010484701048470000 /* moc_MedianFilterDialog.cxx.rule */,
+				10490A010490A010490A0000 /* moc_GADFilterDialog.cxx.rule */,
 			);
 			name = "CMake Rules";
 			sourceTree = "<group>";
@@ -192,14 +192,14 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		106260010626001062600000 /* ImageViewer */ = {
+		104A070104A070104A070000 /* ImageViewer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 106440010644001064400000 /* Build configuration list for PBXNativeTarget "ImageViewer" */;
+			buildConfigurationList = 104BE70104BE70104BE70000 /* Build configuration list for PBXNativeTarget "ImageViewer" */;
 			buildPhases = (
-				106288010628801062880000 /* CMake ReRun */,
-				106344010634401063440000 /* CMake Rules */,
-				10621B010621B010621B0000 /* Sources */,
-				1063B701063B701063B70000 /* CMake PostBuild Rules */,
+				104A2F0104A2F0104A2F0000 /* CMake ReRun */,
+				104AEB0104AEB0104AEB0000 /* CMake Rules */,
+				1049C201049C201049C20000 /* Sources */,
+				104B5E0104B5E0104B5E0000 /* CMake PostBuild Rules */,
 			);
 			buildRules = (
 			);
@@ -207,37 +207,37 @@
 			);
 			name = ImageViewer;
 			productName = ImageViewer;
-			productReference = 107F790107F790107F790000 /* ImageViewer */;
+			productReference = 106720010672001067200000 /* ImageViewer */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		5D75305D75305D7530000000 /* Project object */ = {
+		5BEFA05BEFA05BEFA0000000 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
 				LastUpgradeCheck = 0420;
 			};
-			buildConfigurationList = 5D7E505D7E505D7E50000000 /* Build configuration list for PBXProject "ImageViewer" */;
+			buildConfigurationList = 5BF8C05BF8C05BF8C0000000 /* Build configuration list for PBXProject "ImageViewer" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 5D33D05D33D05D33D0000000;
+			mainGroup = 5BAE405BAE405BAE40000000;
 			projectDirPath = ..;
 			projectRoot = "";
 			targets = (
-				5D9B305D9B305D9B30000000 /* ALL_BUILD */,
-				106260010626001062600000 /* ImageViewer */,
+				5C15A05C15A05C15A0000000 /* ALL_BUILD */,
+				104A070104A070104A070000 /* ImageViewer */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		106288010628801062880000 /* CMake ReRun */ = {
+		104A2F0104A2F0104A2F0000 /* CMake ReRun */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -247,7 +247,7 @@
 			shellPath = /bin/sh;
 			shellScript = "make -C /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20 -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/CMakeScripts/ReRunCMake.make";
 		};
-		106344010634401063440000 /* CMake Rules */ = {
+		104AEB0104AEB0104AEB0000 /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -257,7 +257,7 @@
 			shellPath = /bin/sh;
 			shellScript = "make -C /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20 -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/CMakeScripts/ImageViewer_cmakeRulesBuildPhase.make$CONFIGURATION all";
 		};
-		1063B701063B701063B70000 /* CMake PostBuild Rules */ = {
+		104B5E0104B5E0104B5E0000 /* CMake PostBuild Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -267,7 +267,7 @@
 			shellPath = /bin/sh;
 			shellScript = "make -C /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20 -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/CMakeScripts/ImageViewer_postBuildPhase.make$CONFIGURATION all";
 		};
-		5D9DD05D9DD05D9DD0000000 /* CMake ReRun */ = {
+		5C18405C18405C1840000000 /* CMake ReRun */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -277,7 +277,7 @@
 			shellPath = /bin/sh;
 			shellScript = "make -C /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20 -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/CMakeScripts/ReRunCMake.make";
 		};
-		5DA4405DA4405DA440000000 /* CMake Rules */ = {
+		5C1EB05C1EB05C1EB0000000 /* CMake Rules */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -290,34 +290,34 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		10621B010621B010621B0000 /* Sources */ = {
+		1049C201049C201049C20000 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5CE0405CE0405CE040000000 /* imageviewer.cpp in Sources */,
-				5CEB505CEB505CEB50000000 /* imagewidget.cpp in Sources */,
-				5C2E105C2E105C2E10000000 /* main.cpp in Sources */,
-				5C39E05C39E05C39E0000000 /* MedianFilterDialog.cpp in Sources */,
-				5C04D05C04D05C04D0000000 /* GADFilterDialog.cpp in Sources */,
-				5BFA005BFA005BFA00000000 /* moc_imageviewer.cxx in Sources */,
-				105B2C0105B2C0105B2C0000 /* moc_imagewidget.cxx in Sources */,
-				105BE40105BE40105BE40000 /* moc_MedianFilterDialog.cxx in Sources */,
-				105CA30105CA30105CA30000 /* moc_GADFilterDialog.cxx in Sources */,
+				5B5AB05B5AB05B5AB0000000 /* imageviewer.cpp in Sources */,
+				5B65C05B65C05B65C0000000 /* imagewidget.cpp in Sources */,
+				5AA8805AA8805AA880000000 /* main.cpp in Sources */,
+				5AB4505AB4505AB450000000 /* MedianFilterDialog.cpp in Sources */,
+				5A7F405A7F405A7F40000000 /* GADFilterDialog.cpp in Sources */,
+				5A74705A74705A7470000000 /* moc_imageviewer.cxx in Sources */,
+				1042D301042D301042D30000 /* moc_imagewidget.cxx in Sources */,
+				10438B010438B010438B0000 /* moc_MedianFilterDialog.cxx in Sources */,
+				10444A010444A010444A0000 /* moc_GADFilterDialog.cxx in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		10803B010803B010803B0000 /* PBXTargetDependency */ = {
+		1067E201067E201067E20000 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 106260010626001062600000 /* ImageViewer */;
-			targetProxy = 107FEF0107FEF0107FEF0000 /* PBXContainerItemProxy */;
+			target = 104A070104A070104A070000 /* ImageViewer */;
+			targetProxy = 106796010679601067960000 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		1062E101062E101062E10000 /* Debug */ = {
+		104A880104A880104A880000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/Debug";
@@ -547,7 +547,7 @@
 			};
 			name = Debug;
 		};
-		10648A010648A010648A0000 /* Release */ = {
+		104C310104C310104C310000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/Release";
@@ -779,7 +779,7 @@
 			};
 			name = Release;
 		};
-		106B320106B320106B320000 /* MinSizeRel */ = {
+		1052D901052D901052D90000 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/MinSizeRel";
@@ -1011,7 +1011,7 @@
 			};
 			name = MinSizeRel;
 		};
-		1071ED01071ED01071ED0000 /* RelWithDebInfo */ = {
+		105994010599401059940000 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CONFIGURATION_BUILD_DIR = "/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode-3.20/RelWithDebInfo";
@@ -1241,7 +1241,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		5C66905C66905C6690000000 /* RelWithDebInfo */ = {
+		5AE1005AE1005AE100000000 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /opt/QtSDK/Desktop/Qt/474/gcc/lib;
@@ -1353,7 +1353,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		5D7FE05D7FE05D7FE0000000 /* Debug */ = {
+		5BFA505BFA505BFA50000000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -1363,7 +1363,7 @@
 			};
 			name = Debug;
 		};
-		5D81E05D81E05D81E0000000 /* Release */ = {
+		5BFC505BFC505BFC50000000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -1373,7 +1373,7 @@
 			};
 			name = Release;
 		};
-		5D84405D84405D8440000000 /* MinSizeRel */ = {
+		5BFEB05BFEB05BFEB0000000 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -1383,7 +1383,7 @@
 			};
 			name = MinSizeRel;
 		};
-		5D85E05D85E05D85E0000000 /* RelWithDebInfo */ = {
+		5C00505C00505C0050000000 /* RelWithDebInfo */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
@@ -1393,7 +1393,7 @@
 			};
 			name = RelWithDebInfo;
 		};
-		5DB1A05DB1A05DB1A0000000 /* Debug */ = {
+		5C2C105C2C105C2C10000000 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /opt/QtSDK/Desktop/Qt/474/gcc/lib;
@@ -1505,7 +1505,7 @@
 			};
 			name = Debug;
 		};
-		5E18B05E18B05E18B0000000 /* Release */ = {
+		5C93205C93205C9320000000 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /opt/QtSDK/Desktop/Qt/474/gcc/lib;
@@ -1617,7 +1617,7 @@
 			};
 			name = Release;
 		};
-		5E7F905E7F905E7F90000000 /* MinSizeRel */ = {
+		5CFA005CFA005CFA00000000 /* MinSizeRel */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				FRAMEWORK_SEARCH_PATHS = /opt/QtSDK/Desktop/Qt/474/gcc/lib;
@@ -1732,40 +1732,40 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		106440010644001064400000 /* Build configuration list for PBXNativeTarget "ImageViewer" */ = {
+		104BE70104BE70104BE70000 /* Build configuration list for PBXNativeTarget "ImageViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1062E101062E101062E10000 /* Debug */,
-				10648A010648A010648A0000 /* Release */,
-				106B320106B320106B320000 /* MinSizeRel */,
-				1071ED01071ED01071ED0000 /* RelWithDebInfo */,
+				104A880104A880104A880000 /* Debug */,
+				104C310104C310104C310000 /* Release */,
+				1052D901052D901052D90000 /* MinSizeRel */,
+				105994010599401059940000 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5D7E505D7E505D7E50000000 /* Build configuration list for PBXProject "ImageViewer" */ = {
+		5BF8C05BF8C05BF8C0000000 /* Build configuration list for PBXProject "ImageViewer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5D7FE05D7FE05D7FE0000000 /* Debug */,
-				5D81E05D81E05D81E0000000 /* Release */,
-				5D84405D84405D8440000000 /* MinSizeRel */,
-				5D85E05D85E05D85E0000000 /* RelWithDebInfo */,
+				5BFA505BFA505BFA50000000 /* Debug */,
+				5BFC505BFC505BFC50000000 /* Release */,
+				5BFEB05BFEB05BFEB0000000 /* MinSizeRel */,
+				5C00505C00505C0050000000 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
-		5DAC005DAC005DAC00000000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
+		5C26705C26705C2670000000 /* Build configuration list for PBXAggregateTarget "ALL_BUILD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				5DB1A05DB1A05DB1A0000000 /* Debug */,
-				5E18B05E18B05E18B0000000 /* Release */,
-				5E7F905E7F905E7F90000000 /* MinSizeRel */,
-				5C66905C66905C6690000000 /* RelWithDebInfo */,
+				5C2C105C2C105C2C10000000 /* Debug */,
+				5C93205C93205C9320000000 /* Release */,
+				5CFA005CFA005CFA00000000 /* MinSizeRel */,
+				5AE1005AE1005AE100000000 /* RelWithDebInfo */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 5D75305D75305D7530000000 /* Project object */;
+	rootObject = 5BEFA05BEFA05BEFA0000000 /* Project object */;
 }
