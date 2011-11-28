@@ -18,7 +18,6 @@ class MedianFilterDialog : public QDialog, public Ui::MedianFilterDialog {
 public:
     
     MedianFilterDialog(QWidget *parent = 0);
-    
     virtual ~MedianFilterDialog();
 
 private:
