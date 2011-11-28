@@ -37,7 +37,7 @@ moc*.*
 
 #    Build folders   #
 ######################
-build*/
+build*
 
 #   Other archives   #
 ######################
