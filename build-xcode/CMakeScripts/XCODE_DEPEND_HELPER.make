@@ -1,0 +1,675 @@
+# DO NOT EDIT
+# This makefile makes sure all linkable targets are
+# up-to-date with anything they link to
+default:
+	echo "Do not invoke directly"
+
+# For each target create a dummy rule so the target does not have to exist
+/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKDeprecated-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalOptimizers-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOCSV-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOHDF5-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOMesh-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKReview-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKVideoIO-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmIOD-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmDSED-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmCommon-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg8-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg12-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg16-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkgdcmuuid-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libITKVNLInstantiation-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkv3p_lsqr-4.0.1.dylib:
+/opt/kitware/ITK-4.0-build/lib/libitkvcl-4.0.1.dylib:
+
+
+# Rules to remove targets that are older than anything to which they
+# link.  This forces Xcode to relink the targets from scratch.  It
+# does not seem to check these dependencies itself.
+PostBuild.ImageViewer.Debug:
+/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/Debug/ImageViewer:\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDeprecated-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOCSV-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKReview-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmIOD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDSED-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg8-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg12-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg16-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmuuid-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVNLInstantiation-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_lsqr-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvcl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib
+	/bin/rm -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/Debug/ImageViewer
+
+
+PostBuild.ImageViewer.Release:
+/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/Release/ImageViewer:\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDeprecated-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOCSV-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKReview-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmIOD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDSED-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg8-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg12-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg16-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmuuid-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVNLInstantiation-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_lsqr-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvcl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib
+	/bin/rm -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/Release/ImageViewer
+
+
+PostBuild.ImageViewer.MinSizeRel:
+/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/MinSizeRel/ImageViewer:\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDeprecated-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOCSV-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKReview-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmIOD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDSED-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg8-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg12-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg16-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmuuid-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVNLInstantiation-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_lsqr-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvcl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib
+	/bin/rm -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/MinSizeRel/ImageViewer
+
+
+PostBuild.ImageViewer.RelWithDebInfo:
+/Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/RelWithDebInfo/ImageViewer:\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDeprecated-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOCSV-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKReview-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKDICOMParser-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKHighDimensionalMetrics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKgiftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKLabelMap-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKQuadEdgeMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBiasCorrection-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPolynomials-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKBioCell-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOXML-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKFEM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKImageSource-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKOptimizers-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBMP-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOBioRad-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGDCM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmMSFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkopenjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDICT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmIOD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKEXPAT-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmDSED-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg8-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg12-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmjpeg16-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkgdcmuuid-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOJPEG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOLSM-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTIFF-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitktiff-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkjpeg-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOMeta-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMetaIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONIFTI-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKniftiio-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKznz-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIONRRD-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKNrrdIO-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOPNG-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkpng-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOSiemens-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOGE-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOIPL-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOStimulate-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKKLMRegionGrowing-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVTK-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKWatersheds-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKSpatialObjects-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKMesh-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKPath-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformHDF5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5_cpp-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkhdf5-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkzlib-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformInsightLegacy-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformMatlab-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOTransformBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKStatistics-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkNetlibSlatec-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKIOImageBase-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVideoCore-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKCommon-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitksys-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libITKVNLInstantiation-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl_algo-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_lsqr-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvnl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkvcl-4.0.1.dylib\
+	/opt/kitware/ITK-4.0-build/lib/libitkv3p_netlib-4.0.1.dylib
+	/bin/rm -f /Users/zian/Documents/Proyectos/Qt-ITK-VTK-Image-Viewer/build-xcode/RelWithDebInfo/ImageViewer
+
+

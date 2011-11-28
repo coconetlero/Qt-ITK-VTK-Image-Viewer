@@ -51,7 +51,8 @@ SOURCE_GROUP("Resources" FILES
 )
  
 SOURCE_GROUP("Generated" FILES
-  ${UISrcs} ${MOCSrcs}
+  ${UISrcs}
+  ${MOCSrcs}
 )
  
 ADD_EXECUTABLE(ImageViewer ${ImageViewerSrcs} ${ImageViewerHeaders} ${UISrcs} ${MOCSrcs})
