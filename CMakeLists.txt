@@ -56,5 +56,6 @@ SOURCE_GROUP("Generated" FILES
 )
  
 ADD_EXECUTABLE(ImageViewer ${ImageViewerSrcs} ${ImageViewerHeaders} ${UISrcs} ${MOCSrcs})
+
 TARGET_LINK_LIBRARIES(ImageViewer QVTK ${VTK_LIBRARIES} ${ITK_LIBRARIES})
 
