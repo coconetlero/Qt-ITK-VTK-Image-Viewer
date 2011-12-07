@@ -318,14 +318,13 @@ void ImageWidget::displayImage(vtkImageData *image)
 	actor->InterpolateOff();    
 
 	renderer->AddActor(actor);
-	renderer->ResetCamera();
     renderer->SetActiveCamera(camera);
     renderer->ResetCamera();
 
-	// window interactor style for display images 
-	vtkSmartPointer<vtkInteractorStyleImage> style = vtkSmartPointer<vtkInteractorStyleImage>::New();
 	qvtkWidget->SetRenderWindow(renderWindow);
 
+    // window interactor style for display images 
+	vtkSmartPointer<vtkInteractorStyleImage> style = vtkSmartPointer<vtkInteractorStyleImage>::New();
 	// set interactor style to the qvtkWidget Interactor
 	qvtkWidget->GetInteractor()->SetInteractorStyle(style);
 
