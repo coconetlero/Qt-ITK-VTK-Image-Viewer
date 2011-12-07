@@ -43,6 +43,9 @@ ImageWidget::ImageWidget(QWidget *parent) : QWidget(parent)
 	// Create image actor
 	actor = vtkSmartPointer<vtkImageActor>::New();
 
+    // Create a camera 
+    camera = vtkSmartPointer<vtkCamera>::New();
+    
 	// A renderer and render window
 	renderer = vtkSmartPointer<vtkRenderer>::New();
 	renderWindow = vtkSmartPointer<vtkRenderWindow>::New();
@@ -212,7 +215,7 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 	GADFilterDialog filterDialog(this);
 	if (filterDialog.exec()) {
 
-		// if the image is grayscale
+		// if the image is in grayscale
 		if (imageType.compare("scalar") == 0) {
 			// set up gradient anisotropic diffusion filter
 			typedef itk::GradientAnisotropicDiffusionImageFilter< ImageType, FloatImageType > FilterType;
@@ -251,7 +254,7 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 			filter = NULL;
 			vtkConnector = NULL;
 		} else {
-			// if image is RGB
+			// if the image is RGB
 			typedef itk::RGBPixel< float > FloatPixelType;
 			typedef itk::Image< FloatPixelType, 2 > FloatRGBImageType;
 			typedef itk::VectorGradientAnisotropicDiffusionImageFilter< RGBImageType, FloatRGBImageType > FilterType;
@@ -296,23 +299,28 @@ void ImageWidget::gradientAnisotropicDiffusionFilter()
 
 void ImageWidget::displayImage(vtkImageData *image)
 {
-	if (!isFliped) {
-		// flip image in Y axis				
-		vtkSmartPointer<vtkImageFlip> flipYFilter = vtkSmartPointer<vtkImageFlip>::New();
-		flipYFilter->SetFilteredAxis(1); // flip Y axis
-		flipYFilter->SetInput(image);
-		flipYFilter->Update();
 
-		actor->SetInput(flipYFilter->GetOutput());
-	} else {
-		actor->SetInput(image);
-	}
-
-	actor->InterpolateOff();
+    int *dim= image->GetDimensions();        
+    double *spacing = image->GetSpacing(); 
+    double *origin = image->GetOrigin();  
+    
+    float Cx = (dim[0] * spacing[0])/2. + origin[0];
+    float Cy = (dim[1] * spacing[1])/2. + origin[1];
+    camera->ParallelProjectionOn();
+    camera->SetFocalPoint(Cx,Cy,0);    
+    camera->SetPosition(Cx,Cy,1);
+    //
+    //    // to flip de image
+    //    camera->SetViewUp (0, 1, 0);  
+    //    
+    // set actor properties
+    actor->SetInput(image);
+	actor->InterpolateOff();    
 
 	renderer->AddActor(actor);
 	renderer->ResetCamera();
-	//	renderWindow->SetSize(640, 480);
+    renderer->SetActiveCamera(camera);
+    renderer->ResetCamera();
 
 	// window interactor style for display images 
 	vtkSmartPointer<vtkInteractorStyleImage> style = vtkSmartPointer<vtkInteractorStyleImage>::New();

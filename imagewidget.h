@@ -17,7 +17,7 @@
 #include <vtkRenderWindow.h>
 #include <vtkSmartPointer.h>
 #include <vtkImageData.h>
-
+#include <vtkCamera.h>
 
 #include <itkImage.h>
 #include <itkRGBPixel.h>
@@ -91,6 +91,7 @@ private:
     vtkSmartPointer<vtkRenderer> renderer;
     vtkSmartPointer<vtkRenderWindow> renderWindow;
     vtkSmartPointer<vtkRenderWindowInteractor> interactor; 
+    vtkSmartPointer<vtkCamera> camera;
 
     /** The type of the image components RGB, scalar, etc */
     std::string pixelType;
