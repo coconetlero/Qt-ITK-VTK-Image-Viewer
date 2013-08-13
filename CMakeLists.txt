@@ -46,7 +46,7 @@ QT4_WRAP_CPP(MOCSrcs ${ImageViewerHeaders} )
  
  
 # Packaging source code in same files 
-SOURCE_GROUP("Resources" FILES
+SOURCE_GROUP("Forms" FILES
   ${ImageViewerUI}
 )
  
